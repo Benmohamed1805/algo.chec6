@@ -1,0 +1,65 @@
+b_tree :	STRUCT
+                    val :INTEGER ;
+                    lc :^b_tree;
+                    rc :^b_tree;
+                END_STRUCT
+    FUNCTION node_numb(t:^b_tree) : INTEGER
+    VAR
+        
+    BEGIN
+        if(t=NULL){
+            Return 0
+
+        }else {
+             RETURN node_num(t^lc)+node_num(t^rc)+1
+        }
+        
+    END 
+FUNCTION height(t:^b_tree) : INTEGER
+VAR
+    
+BEGIN
+    if (t=NULL){
+        RETURN 0
+    } else {
+        RETURN 1+ max(height(t.^lc),heigth(t.^rc))
+    }
+  
+END
+FUNCTION  nb_leafs(t:^b_tree): INTEGER
+VAR
+    
+BEGIN
+    IF (t=NULL) THEN
+        RETURN 0
+    ELSE_IF (t.^lc=NULL AND t.^rc=NULL) THEN
+        RETURN 1
+    ELSE
+        RETURN nb_leafs(t.^lc)+nb_leafs(t.^rc)
+    END_IF
+    
+END
+FUNCTION max(t:^b_tree) : INTEGER
+BEGIN
+IF (t<>NULL) THEN
+    IF (t^.rc=NULL)
+    RETURN t^.val;
+    ELSE
+    RETURN max(b_tree(t^.rc))
+END_IF
+END 
+
+FUNCTION test(b_tree t)  
+
+BEGIN
+IF (t=NULL) THEN
+    RETURN TRUE;
+ELSE_IF (t^.lc=NULL& t^.rc=NULL)THEN
+RETURN TRUE 
+
+ELSE_IF ((t^.lc) & (t^.rc))
+RETURN test(t^.lc)& test(t^.rc)
+ELSE 
+    RETURN FALSE
+END_IF    
+END

@@ -1,0 +1,57 @@
+.logo{
+    width: 200px;
+    height: 200px;
+    
+}
+.header_section{
+    display:flex;
+    justify-content: space-around;
+}
+.nav_menu {display: flex;
+    width: 800px;
+    justify-content: space-around;
+    list-style: none;
+    
+}
+.nav_menu :hover { color: aqua;}
+
+.dropdown{
+    display: none;
+}
+.elem_drop:hover .dropdown{display: block;}
+
+.dropdown{
+    width: 200px; margin: 10px;
+    padding: 10px;
+    background-color: white;
+    
+}
+.dropdown :hover {
+background-color: grey;
+}
+.logo2{
+    display: flex;
+    justify-content: center;
+
+}
+.title{
+    text-align: center;
+    color: #00b39b;
+    font-size: 25px;
+}
+.text_block {
+    display: flex;
+ justify-content: space-around;
+ width: 1000px;
+ height: 300px;
+margin-left : 100px;
+margin-right: 100px;
+padding: 25px;
+}
+.text_block p{
+    width: 250px;
+
+}
+div{
+    border: solid 1px black;
+}
