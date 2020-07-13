@@ -11,7 +11,7 @@ b_tree :	STRUCT
             Return 0
 
         }else {
-             RETURN node_num(t^lc)+node_num(t^rc)+1
+             RETURN 1+node_num(t^lc)+node_num(t^rc)
         }
         
     END 
@@ -35,7 +35,7 @@ BEGIN
     ELSE_IF (t.^lc=NULL AND t.^rc=NULL) THEN
         RETURN 1
     ELSE
-        RETURN nb_leafs(t.^lc)+nb_leafs(t.^rc)
+        RETURN 1+nb_leafs(t.^lc)+nb_leafs(t.^rc)
     END_IF
     
 END
